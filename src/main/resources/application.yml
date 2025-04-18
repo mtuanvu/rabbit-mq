@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: demo_rabbitmq
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/studentdb
+    username: postgres
+    password: mtuanvu1234
+
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    listener:
+      simple:
+        message-converter: jackson2
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: maituanvu141@gmail.com
+    password: kypqhjmdhshgusqq
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+rabbitmq:
+  queue:
+    name: queueName
+  exchange:
+    name: queueExchange
